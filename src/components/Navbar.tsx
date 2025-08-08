@@ -18,11 +18,11 @@ const Navbar: React.FC = () => {
   }, []);
 
   const navItems = [
-    { name: 'Home', href: '/' },
+    { name: 'Home', href: '/#/' },
     { name: 'About', href: '/#about' },
-    { name: 'Experience', href: '/experience' },
-    { name: 'Skills', href: '/skills' },
-    { name: 'Contact', href: '/contact' },
+    { name: 'Experience', href: '/#/experience' },
+    { name: 'Skills', href: '/#/skills' },
+    { name: 'Contact', href: '/#/contact' },
   ];
 
   return (
@@ -63,9 +63,9 @@ const Navbar: React.FC = () => {
                     </a>
                   ) : (
                     <Link
-                      to={item.href}
+                      to={item.href.replace('/#', '')}
                       className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
-                        location.pathname === item.href ? 'text-blue-600' : 'text-gray-700 hover:text-blue-600'
+                        location.pathname === item.href.replace('/#', '') ? 'text-blue-600' : 'text-gray-700 hover:text-blue-600'
                       }`}
                     >
                       {item.name}
@@ -109,15 +109,15 @@ const Navbar: React.FC = () => {
                   {item.name}
                 </a>
               ) : (
-                <Link
-                  to={item.href}
-                  className={`block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 ${
-                    location.pathname === item.href ? 'text-blue-600' : 'text-gray-700 hover:text-blue-600'
-                  }`}
-                  onClick={() => setIsOpen(false)}
-                >
-                  {item.name}
-                </Link>
+                                 <Link
+                   to={item.href.replace('/#', '')}
+                   className={`block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 ${
+                     location.pathname === item.href.replace('/#', '') ? 'text-blue-600' : 'text-gray-700 hover:text-blue-600'
+                   }`}
+                   onClick={() => setIsOpen(false)}
+                 >
+                   {item.name}
+                 </Link>
               )}
             </div>
           ))}
