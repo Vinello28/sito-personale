@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import { ArrowDown, Code, Cpu, Database } from 'lucide-react';
 
 const Hero: React.FC = () => {
@@ -94,12 +95,12 @@ const Hero: React.FC = () => {
           >
             Discover More
           </a>
-          <a
-            href="#contact"
+          <Link
+            to="/contact"
             className="btn btn-secondary text-lg px-8 py-4"
           >
             Get In Touch
-          </a>
+          </Link>
         </motion.div>
 
         <motion.div

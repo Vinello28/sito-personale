@@ -1,24 +1,31 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
-import Experience from './components/Experience';
-import Skills from './components/Skills';
-import Contact from './components/Contact';
+import ExperiencePage from './pages/ExperiencePage';
+import SkillsPage from './pages/SkillsPage';
+import ContactPage from './pages/ContactPage';
 
 function App() {
   return (
-    <div className="App">
-      <Navbar />
-      <main>
-        <Hero />
-        <About />
-        <Experience />
-        <Skills />
-        <Contact />
-      </main>
-    </div>
+    <Router>
+      <div className="App">
+        <Navbar />
+        <Routes>
+          <Route path="/" element={
+            <main>
+              <Hero />
+              <About />
+            </main>
+          } />
+          <Route path="/experience" element={<ExperiencePage />} />
+          <Route path="/skills" element={<SkillsPage />} />
+          <Route path="/contact" element={<ContactPage />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
