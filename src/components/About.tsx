@@ -50,10 +50,10 @@ const About: React.FC = () => {
         >
           <h2 className="text-4xl font-bold text-gray-900 mb-4">About Me</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Student and software engineer with skills ranging from automation software to design & development 
+            My skills goes from automation software to design & development 
             of distributed applications. Experience mainly in Microsoft/Azure environment; in recent years, 
             I've had the opportunity to deepen my knowledge of the Java world, UNIX systems and apply 
-            engineering methods in problem solving.
+            engineering methods in problem solving for real world apps.
           </p>
         </motion.div>
 
