@@ -68,7 +68,7 @@ const Hero: React.FC = () => {
             Gabriele Vianello
           </h1>
           <h2 className="text-2xl md:text-3xl font-medium text-gray-600 mb-8">
-            Software Engineer & AI Enthusiast
+            Student & Software Engineer
           </h2>
         </motion.div>
 
@@ -78,9 +78,9 @@ const Hero: React.FC = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="text-xl text-gray-600 mb-12 max-w-2xl mx-auto leading-relaxed"
         >
-          Passionate about creating innovative software solutions with expertise in 
-          .NET, AI/ML, and distributed systems. Currently pursuing a Master's in 
-          Computer Engineering with focus on Artificial Intelligence and Data Science.
+          Passionate student and SWE about creating innovative software solutions with expertise in 
+          .NET, AI/ML, actually working on real-world projects mainly in Data Analysis. Currently pursuing a Master of Sciences
+          degree in Computer Engineering with focus on Artificial Intelligence and Data Science.
         </motion.p>
 
         <motion.div

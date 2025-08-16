@@ -8,11 +8,12 @@ const Skills: React.FC = () => {
       title: "Programming Languages",
       icon: <Code className="text-blue-600" size={24} />,
       skills: [
-        { name: "C", level: 85 },
-        { name: "C#", level: 90 },
-        { name: ".NET9", level: 88 },
-        { name: "MAUI", level: 80 },
-        { name: "Python", level: 75 }
+        { name: "C", level: 90 },
+        { name: "C#", level: 95 },
+        { name: "Java", level: 88 },
+        { name: "JavaScript", level: 55},
+        { name: "TypeScript", level: 50 },
+        { name: "Python", level: 77 }
       ]
     },
     {
@@ -20,8 +21,7 @@ const Skills: React.FC = () => {
       icon: <Globe className="text-green-600" size={24} />,
       skills: [
         { name: "HTML", level: 90 },
-        { name: "JavaScript", level: 85 },
-        { name: "TypeScript", level: 80 },
+        { name: "React", level: 60 },
         { name: "ASP.NET", level: 88 },
         { name: "Blazor", level: 85 }
       ]
@@ -31,10 +31,11 @@ const Skills: React.FC = () => {
       icon: <Cpu className="text-purple-600" size={24} />,
       skills: [
         { name: "Machine Learning", level: 75 },
-        { name: "PySpark", level: 70 },
+        { name: "PyTorch", level: 86 },
+        { name: "Agent Development", level: 75 },
         { name: "Data Analysis", level: 80 },
-        { name: "AI/ML Models", level: 75 },
-        { name: "LLM Integration", level: 70 }
+        { name: "NLP models", level: 84 },
+        { name: "Transformer & LLM", level: 90 }
       ]
     },
     {
@@ -53,7 +54,7 @@ const Skills: React.FC = () => {
       icon: <GitBranch className="text-red-600" size={24} />,
       skills: [
         { name: "Design Patterns", level: 85 },
-        { name: "MVVM", level: 88 },
+        { name: "Design from top level", level: 88 },
         { name: "UML Design", level: 80 },
         { name: "Testing & Debugging", level: 85 },
         { name: "System Architecture", level: 75 }
@@ -63,11 +64,10 @@ const Skills: React.FC = () => {
       title: "Networking & IoT",
       icon: <Database className="text-indigo-600" size={24} />,
       skills: [
-        { name: "Network Protocols", level: 80 },
-        { name: "IoT Development", level: 75 },
+        { name: "Network Protocols", level: 90 },
+        { name: "IoT Development", level: 65 },
         { name: "PLC Programming", level: 70 },
-        { name: "Arduino", level: 75 },
-        { name: "ESP Firmware", level: 70 }
+        { name: "Arduino", level: 85 },
       ]
     }
   ];
@@ -183,9 +183,8 @@ const Skills: React.FC = () => {
           <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-2xl p-8 border border-blue-100">
             <h3 className="text-2xl font-bold text-gray-900 mb-4">Continuous Learning</h3>
             <p className="text-gray-700 max-w-2xl mx-auto">
-              I'm constantly expanding my knowledge in emerging technologies, particularly in AI/ML, 
-              cloud computing, and modern development practices. My academic background in Computer Engineering 
-              with focus on Artificial Intelligence and Data Science keeps me at the forefront of technological innovation.
+              I'm constantly expanding my knowledge in emerging technologies, especially in AI computing and local LLMs. My academic background in Computer Engineering
+              focused on Artificial Intelligence and Data Science keeps me at the forefront of technological innovation.
             </p>
           </div>
         </motion.div>

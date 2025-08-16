@@ -10,15 +10,15 @@ const Experience: React.FC = () => {
       location: "Remote",
       period: "March 2025 - Present",
       type: "Part-time",
-      description: "Consulting, software development for .NET Framework applications and complete data persistence solutions.",
+      description: "Consulting, software development for .NET Framework applications and complete data persistence and analysis solutions.",
       achievements: [
         "Development and integration of new ASP.NET software modules",
         "Design and development of MAUI applications",
-        "Development and integration of new Blazor components"
+        "Development and integration of new Blazor components"        
       ]
     },
     {
-      title: "Software Developer",
+      title: "Software Engineering Intern",
       company: "Politecnico di Milano Internship",
       location: "Cremona/Ancona, Hybrid",
       period: "March - May 2024",
@@ -27,7 +27,8 @@ const Experience: React.FC = () => {
       achievements: [
         "Refinement of solution architecture following MVVM pattern",
         "Code writing starting from basic CRUD functions (service injection)",
-        "Front-end of the final application and testing"
+        "Front-end of the final application and testing",
+        "NET.ML Framework for machine learning"
       ]
     },
     {

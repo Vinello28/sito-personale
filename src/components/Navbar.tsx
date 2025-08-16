@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { motion } from 'framer-motion';
 
@@ -7,6 +7,7 @@ const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,13 +18,31 @@ const Navbar: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Menu voci: route interne e anchor About
   const navItems = [
-    { name: 'Home', href: '/#/' },
-    { name: 'About', href: '/#about' },
-    { name: 'Experience', href: '/#/experience' },
-    { name: 'Skills', href: '/#/skills' },
-    { name: 'Contact', href: '/#/contact' },
+    { name: 'Home', to: '/', type: 'route' as const },
+    { name: 'About', type: 'about' as const },
+    { name: 'Experience', to: '/experience', type: 'route' as const },
+    { name: 'Skills', to: '/skills', type: 'route' as const },
+    { name: 'Contact', to: '/contact', type: 'route' as const },
   ];
+
+  const handleAboutClick = (e?: React.MouseEvent) => {
+    if (e) e.preventDefault();
+    const scrollToAbout = () => {
+      const el = document.getElementById('about');
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    };
+
+    if (location.pathname !== '/') {
+      navigate('/');
+      // Attendi il render della home prima di scrollare
+      setTimeout(scrollToAbout, 100);
+    } else {
+      scrollToAbout();
+    }
+    setIsOpen(false);
+  };
 
   return (
     <motion.nav
@@ -48,24 +67,21 @@ const Navbar: React.FC = () => {
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-8">
               {navItems.map((item) => (
-                <motion.div
-                  key={item.name}
-                  whileHover={{ y: -2 }}
-                >
-                  {item.href.startsWith('/#') ? (
-                    <a
-                      href={item.href}
+                <motion.div key={item.name} whileHover={{ y: -2 }}>
+                  {item.type === 'about' ? (
+                    <button
+                      onClick={handleAboutClick}
                       className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
-                        location.pathname === '/' ? 'text-blue-600' : 'text-gray-700 hover:text-blue-600'
+                        location.pathname === '/' ? 'text-gray-700 hover:text-blue-600' : 'text-gray-700 hover:text-blue-600'
                       }`}
                     >
                       {item.name}
-                    </a>
+                    </button>
                   ) : (
                     <Link
-                      to={item.href.replace('/#', '')}
+                      to={item.to!}
                       className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
-                        location.pathname === item.href.replace('/#', '') ? 'text-blue-600' : 'text-gray-700 hover:text-blue-600'
+                        location.pathname === item.to ? 'text-blue-600' : 'text-gray-700 hover:text-blue-600'
                       }`}
                     >
                       {item.name}
@@ -98,26 +114,25 @@ const Navbar: React.FC = () => {
         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
           {navItems.map((item) => (
             <div key={item.name}>
-              {item.href.startsWith('/#') ? (
-                <a
-                  href={item.href}
+              {item.type === 'about' ? (
+                <button
+                  onClick={handleAboutClick}
                   className={`block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 ${
-                    location.pathname === '/' ? 'text-blue-600' : 'text-gray-700 hover:text-blue-600'
+                    location.pathname === '/' ? 'text-gray-700 hover:text-blue-600' : 'text-gray-700 hover:text-blue-600'
+                  }`}
+                >
+                  {item.name}
+                </button>
+              ) : (
+                <Link
+                  to={item.to!}
+                  className={`block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 ${
+                    location.pathname === item.to ? 'text-blue-600' : 'text-gray-700 hover:text-blue-600'
                   }`}
                   onClick={() => setIsOpen(false)}
                 >
                   {item.name}
-                </a>
-              ) : (
-                                 <Link
-                   to={item.href.replace('/#', '')}
-                   className={`block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200 ${
-                     location.pathname === item.href.replace('/#', '') ? 'text-blue-600' : 'text-gray-700 hover:text-blue-600'
-                   }`}
-                   onClick={() => setIsOpen(false)}
-                 >
-                   {item.name}
-                 </Link>
+                </Link>
               )}
             </div>
           ))}

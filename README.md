@@ -1,46 +1,103 @@
-# Getting Started with Create React App
+# Gabriele Vianello — Personal Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A fast, responsive personal website built with React + TypeScript. It showcases my profile, experience, skills and ways to get in touch. Deployed to GitHub Pages.
 
-## Available Scripts
+- Live: https://vinello28.github.io/sito-personale
+- Repository: https://github.com/Vinello28/sito-personale
 
-In the project directory, you can run:
+## Tech stack
+- React 19 + TypeScript
+- React Router (client-side routing)
+- Tailwind CSS (utility-first styling)
+- Framer Motion (micro-interactions/animations)
+- Lucide Icons
+- Create React App 5 (build tooling)
+- GitHub Pages (hosting)
 
-### `npm start`
+## Requirements
+- Node.js 18+ (recommended 20+)
+- npm 8+
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Getting started
+Clone and install dependencies:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+```bash
+# macOS / zsh
+git clone https://github.com/Vinello28/sito-personale.git
+cd sito-personale
+npm install
+```
 
-### `npm test`
+Run the app locally:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+npm start
+```
+Open http://localhost:3000
 
-### `npm run build`
+Build for production:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+npm run build
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Scripts
+- `npm start` — run locally in development
+- `npm test` — run tests in watch mode
+- `npm run build` — build production artifacts to `build/`
+- `npm run deploy` — publish the `build/` folder to the `gh-pages` branch (GitHub Pages)
+- `npm run eject` — expose CRA config (one-way)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Deployment (GitHub Pages)
+This project is configured to deploy to GitHub Pages via the `gh-pages` package.
 
-### `npm run eject`
+Prerequisites already set up in this repo:
+- `"homepage": "https://vinello28.github.io/sito-personale"` in `package.json`
+- `predeploy` and `deploy` scripts
+- A 404 fallback in `public/404.html` for SPA routing on GitHub Pages
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Deploy steps:
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+npm run build
+npm run deploy
+```
+Then wait 1–2 minutes and visit: https://vinello28.github.io/sito-personale
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+If you change the repo name or username, update `homepage` accordingly.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Project structure
+```
+.
+├── public/
+│   ├── index.html
+│   └── 404.html            # SPA redirect for GitHub Pages
+├── src/
+│   ├── components/         # UI components (Navbar, Hero, About, etc.)
+│   ├── pages/              # Route-level pages (Experience, Skills, Contact)
+│   ├── App.tsx             # Routes configuration
+│   └── index.tsx           # App entry
+└── build/                  # Production output (generated)
+```
 
-## Learn More
+## Routing
+- The app uses client-side routing and is compatible with GitHub Pages.
+- Navigation is handled through React Router links (no full page reloads).
+- `public/404.html` ensures direct URL visits (e.g. `/experience`) resolve correctly when hosted on GitHub Pages.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Accessibility & performance
+- Semantic HTML and accessible labels where applicable
+- Motion effects kept subtle for usability
+- Lightweight, optimized production build
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Troubleshooting
+- 404 on direct page navigation: ensure `404.html` is deployed and `homepage` is correct; run `npm run deploy` again and hard-refresh the browser (Cmd+Shift+R).
+- Styling not applied: confirm Tailwind build is included and that you restarted the dev server after changes.
+- If deploy doesn’t show updates: verify the `gh-pages` branch contains the latest build artifacts and that GitHub Pages is enabled on `gh-pages` (Settings → Pages).
+
+## Contact
+- Email: vianello.tech@gmail.com
+- LinkedIn: [Gabriele Vianello](https://www.linkedin.com/in/gabriele-vianello-476a331a1)
+
+---
+© Gabriele Vianello. All rights reserved.

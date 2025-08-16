@@ -33,14 +33,14 @@ const Contact: React.FC = () => {
     {
       icon: <Mail className="text-blue-600" size={24} />,
       title: "Email",
-      value: "gabriele.vianello@example.com",
-      link: "mailto:gabriele.vianello@example.com"
+      value: "vianello.tech@gmail.com",
+      link: "mailto:vianello.tech@gmail.com"
     },
     {
       icon: <Phone className="text-green-600" size={24} />,
       title: "Phone",
-      value: "+39 XXX XXX XXXX",
-      link: "tel:+39XXXXXXXXX"
+      value: "+39 329 207 0172",
+      link: "tel:+393292070172"
     },
     {
       icon: <MapPin className="text-purple-600" size={24} />,
@@ -62,8 +62,8 @@ const Contact: React.FC = () => {
         >
           <h2 className="text-4xl font-bold text-gray-900 mb-4">Get In Touch</h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            I'm always interested in new opportunities and exciting projects. 
-            Feel free to reach out if you'd like to collaborate or just want to say hello!
+            I'm always interested in new opportunities and ai-related projects. 
+            Feel free to reach out if you'd like to collaborate!
           </p>
         </motion.div>
 
@@ -81,8 +81,7 @@ const Contact: React.FC = () => {
               <p className="text-gray-700 mb-8 leading-relaxed">
                 Whether you have a project in mind, want to discuss potential opportunities, 
                 or just want to learn more about my work, I'd love to hear from you. 
-                I'm particularly interested in roles involving AI/ML, .NET development, 
-                and innovative software solutions.
+                Use the form below to send me a message, or reach out via email or phone.
               </p>
             </div>
 
